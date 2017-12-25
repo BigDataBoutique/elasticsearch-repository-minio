@@ -25,6 +25,8 @@ esplugin {
     version rootProject.version
     description 'Minio repository plugin for Elasticsearch'
     classname 'com.bigdataboutique.elasticsearch.repositories.minio.MinioRepositoryPlugin'
+    licenseFile rootProject.file('LICENSE')
+    noticeFile rootProject.file('NOTICE')
 }
 dependencyLicenses.enabled = false // TODO enforce but lightly
 thirdPartyAudit.enabled = false // TODO enforce but lightly
