@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.elasticsearch.gradle:build-tools:" + elasticsearch
+    }
+}
+
+apply plugin: 'elasticsearch.esplugin'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+repositories {
+    jcenter()
+}
+
+group = 'com.bigdataboutique.elasticsearch.minio'
+version = '0.1.0-es' + elasticsearch
+description = """A Minio snapshots repository plugin for Elasticsearch"""
+
+esplugin {
+    name 'repository-minio'
+    version rootProject.version
+    description 'Minio repository plugin for Elasticsearch'
+    classname 'com.bigdataboutique.elasticsearch.repositories.minio.MinioRepositoryPlugin'
+}
+dependencyLicenses.enabled = false // TODO enforce but lightly
+thirdPartyAudit.enabled = false // TODO enforce but lightly
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+dependencies {
+    compile 'io.minio:minio:3.0.10'
+    compileOnly group: 'xmlpull', name: 'xmlpull', version: '1.1.3.1'
+    compileOnly group: 'com.google.guava', name: 'guava', version:'19.0'
+    compileOnly group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jackson
+    compileOnly group: 'org.elasticsearch', name: 'elasticsearch', version: elasticsearch
+    testCompile group: 'junit', name: 'junit', version: junit
+}
+
+// TODO
+project.test.testClassesDir = project.sourceSets.test.output.classesDir
