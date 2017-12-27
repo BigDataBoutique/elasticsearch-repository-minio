@@ -25,11 +25,9 @@ esplugin {
     version rootProject.version
     description 'Minio repository plugin for Elasticsearch'
     classname 'com.bigdataboutique.elasticsearch.repositories.minio.MinioRepositoryPlugin'
-    licenseFile rootProject.file('LICENSE')
-    noticeFile rootProject.file('NOTICE')
+    licenseFile = rootProject.file('LICENSE')
+    noticeFile = rootProject.file('NOTICE')
 }
-dependencyLicenses.enabled = false // TODO enforce but lightly
-thirdPartyAudit.enabled = false // TODO enforce but lightly
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -47,5 +45,10 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: junit
 }
 
-// TODO
+dependencyLicenses.enabled = false // TODO enforce but lightly
+thirdPartyAudit.enabled = false // TODO enforce but lightly
 project.test.testClassesDir = project.sourceSets.test.output.classesDir
+//licenseFile = rootProject.file('LICENSE')
+//noticeFile = rootProject.file('NOTICE')
+// this is temporal and will be fixed in 6.0
+ext.projectSubstitutions = [:]
