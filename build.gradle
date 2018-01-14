@@ -47,8 +47,6 @@ dependencies {
 
 dependencyLicenses.enabled = false // TODO enforce but lightly
 thirdPartyAudit.enabled = false // TODO enforce but lightly
-project.test.testClassesDir = project.sourceSets.test.output.classesDir
-//licenseFile = rootProject.file('LICENSE')
-//noticeFile = rootProject.file('NOTICE')
-// this is temporal and will be fixed in 6.0
-ext.projectSubstitutions = [:]
+noticeFile = rootProject.file('NOTICE')
+licenseFile = rootProject.file('LICENSE')
+//project.test.testClassesDir = project.sourceSets.test.output.classesDir
