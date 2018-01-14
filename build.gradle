@@ -1,9 +1,10 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
     }
     dependencies {
-        classpath files('/Users/synhershko/code/plugind/plugind-elasticsearch-builder/build-bootstrap/libs/plugind-elasticsearch-builder-0.1.0-SNAPSHOT-all.jar')
+        classpath 'io.plugind.builders:elasticsearch-gradle-plugin:0.1.0'
     }
 }
 
@@ -13,10 +14,11 @@ apply plugin: 'idea'
 apply plugin: 'maven'
 
 repositories {
+    mavenLocal()
     jcenter()
 }
 
-group = 'com.bigdataboutique.elasticsearch.minio'
+group = 'com.bigdataboutique.elasticsearch.repositories.minio'
 version = '0.1.0-es' + elasticsearch
 description = """A Minio snapshots repository plugin for Elasticsearch"""
 
@@ -41,7 +43,7 @@ dependencies {
         exclude group: 'commons-logging'
     }
     compileOnly group: 'xmlpull', name: 'xmlpull', version: '1.1.3.1'
-    compileOnly group: 'com.google.guava', name: 'guava', version:'19.0'
+    compileOnly group: 'com.google.guava', name: 'guava', version: '19.0'
     compileOnly group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jackson
     compileOnly group: 'org.elasticsearch', name: 'elasticsearch', version: elasticsearch
     testCompile group: 'junit', name: 'junit', version: junit
