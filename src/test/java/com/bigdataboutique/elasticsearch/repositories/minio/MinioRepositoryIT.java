@@ -22,7 +22,7 @@ import org.elasticsearch.test.rest.yaml.ESClientYamlSuiteTestCase;
 
 public class MinioRepositoryIT extends ESClientYamlSuiteTestCase {
 
-    public MinioRepositoryIT(@Name("yaml") ClientYamlTestCandidate testCandidate) {
+    public MinioRepositoryIT(@Name("yml") ClientYamlTestCandidate testCandidate) {
         super(testCandidate);
     }
 
