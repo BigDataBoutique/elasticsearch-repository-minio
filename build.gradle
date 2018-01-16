@@ -1,10 +1,9 @@
 buildscript {
     repositories {
         jcenter()
-        mavenLocal()
     }
     dependencies {
-        classpath 'io.plugind.builders:elasticsearch-gradle-plugin:0.1.0'
+        classpath 'io.plugind.builders.elasticsearch:gradle-plugin:0.3.0'
     }
 }
 
@@ -51,4 +50,3 @@ dependencyLicenses.enabled = false // TODO enforce but lightly
 thirdPartyAudit.enabled = false // TODO enforce but lightly
 noticeFile = rootProject.file('NOTICE')
 licenseFile = rootProject.file('LICENSE')
-//project.test.testClassesDir = project.sourceSets.test.output.classesDir
